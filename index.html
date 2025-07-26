@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebXpress - Professionelle Websites in 48 Stunden</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .nav {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav a:hover {
+            color: #3498db;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            background-color: #27ae60;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #2ecc71;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .feature-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+        
+        .feature-item h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .feature-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Examples Section */
+        .examples {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .examples h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .examples-subtitle {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 50px;
+            color: #666;
+        }
+        
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+        
+        .example-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .example-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .example-image {
+            width: 100%;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .example-content {
+            padding: 25px;
+        }
+        
+        .example-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .example-content p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .example-button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        
+        .example-button:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .pricing h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .pricing-subtitle {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 50px;
+            color: #666;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 3px solid #27ae60;
+            transition: transform 0.3s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .pricing-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .price {
+            font-size: 48px;
+            font-weight: bold;
+            color: #27ae60;
+            margin-bottom: 10px;
+        }
+        
+        .price-period {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .pricing-features li {
+            padding: 8px 0;
+            color: #666;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-button {
+            background-color: #27ae60;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        
+        .pricing-button:hover {
+            background-color: #2ecc71;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: #2c3e50;
+            color: white;
+        }
+        
+        .contact h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            text-align: center;
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .features-grid,
+            .examples-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">WebXpress</div>
+                <nav class="nav">
+                    <a href="#home">Home</a>
+                    <a href="#leistungen">Leistungen</a>
+                    <a href="#beispiele">Beispiele</a>
+                    <a href="#preise">Preise</a>
+                    <a href="#kontakt">Kontakt</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Professionelle Websites in 48 Stunden</h1>
+            <p>Perfekte Websites für Friseure und Eisdielen - schnell, professionell und zum Festpreis.</p>
+            <a href="#kontakt" class="cta-button">Jetzt Website anfragen</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="leistungen">
+        <div class="container">
+            <h2>Was Sie bekommen</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Vollständige Website</h3>
+                    <p>5 Seiten mit allem was Sie brauchen: Home, Über uns, Services, Preise und Kontakt</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile-optimiert</h3>
+                    <p>Ihre Website funktioniert perfekt auf jedem Handy, Tablet und Computer</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🖼️</div>
+                    <h3>Bildergalerie</h3>
+                    <p>Professionelle Präsentation Ihrer Arbeiten und Produkte</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>Google-Integration</h3>
+                    <p>Ihre Kunden finden Sie sofort über Google Maps</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✉️</div>
+                    <h3>Kontaktformular</h3>
+                    <p>Einfache Kontaktaufnahme für Ihre Kunden</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fertig in 48 Stunden</h3>
+                    <p>Schnelle Umsetzung ohne lange Wartezeiten</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples Section -->
+    <section class="examples" id="beispiele">
+        <div class="container">
+            <h2>Beispiel-Websites</h2>
+            <p class="examples-subtitle">Sehen Sie, wie Ihre Website aussehen könnte</p>
+            <div class="examples-grid">
+                <div class="example-item">
+                    <div class="example-image" style="background-image: url('https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/681102b9-b1d4-4525-8840-77fba642ba4f_wm');"></div>
+                    <div class="example-content">
+                        <h3>Friseursalon</h3>
+                        <p>Elegante Website für Friseurbetriebe mit Galerie, Services und Terminbuchung</p>
+                        <a href="https://abrunett1234.github.io/abr.github.io/" target="_blank" class="example-button">Beispiel ansehen</a>
+                    </div>
+                </div>
+                <div class="example-item">
+                    <div class="example-image" style="background-image: url('https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/d72139b8-bbf2-4e54-b1f0-2eb34c42f6ef_wm');"></div>
+                    <div class="example-content">
+                        <h3>Eisdiele</h3>
+                        <p>Appetitliche Website für Eisdielen mit Sorten-Übersicht und Öffnungszeiten</p>
+                        <a href="https://abrunett1234.github.io/alanbrunetta.github.io/" target="_blank" class="example-button">Beispiel ansehen</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="preise">
+        <div class="container">
+            <h2>Unsere Preise</h2>
+            <p class="pricing-subtitle">Zwei Zahlungsweisen - eine Leistung</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Einmalzahlung</h3>
+                    <div class="price">599€</div>
+                    <div class="price-period">einmalig</div>
+                    <ul class="pricing-features">
+                        <li>Vollständige Website (5 Seiten)</li>
+                        <li>Bildergalerie für Ihre Arbeiten</li>
+                        <li>Mobile-optimiert</li>
+                        <li>Google-Integration</li>
+                        <li>Kontaktformular</li>
+                        <li>12 Monate Hosting inklusive</li>
+                        <li>6 Monate kostenlose Änderungen</li>
+                        <li>Fertig in 48 Stunden</li>
+                    </ul>
+                    <a href="#kontakt" class="pricing-button">Jetzt bestellen</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Ratenzahlung</h3>
+                    <div class="price">49,90€</div>
+                    <div class="price-period">monatlich für 12 Monate</div>
+                    <ul class="pricing-features">
+                        <li>Vollständige Website (5 Seiten)</li>
+                        <li>Bildergalerie für Ihre Arbeiten</li>
+                        <li>Mobile-optimiert</li>
+                        <li>Google-Integration</li>
+                        <li>Kontaktformular</li>
+                        <li>12 Monate Hosting inklusive</li>
+                        <li>6 Monate kostenlose Änderungen</li>
+                        <li>Fertig in 48 Stunden</li>
+                    </ul>
+                    <a href="#kontakt" class="pricing-button">Jetzt bestellen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="kontakt">
+        <div class="container">
+            <h2>Kontakt</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Bereit für Ihre neue Website?</h3>
+                    <p><strong>Alan Brunetta</strong></p>
+                    <p>Römerstr. 5</p>
+                    <p>94345 Obermotzing</p>
+                    <p>Telefon: 09429 947796</p>
+                    <p>E-Mail: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="36575a575818544443585342425776464459425958185b53">[email&#160;protected]</a></p>
+                </div>
+                <div class="contact-info">
+                    <h3>So funktioniert es</h3>
+                    <p><strong>1.</strong> Sie kontaktieren uns</p>
+                    <p><strong>2.</strong> Wir besprechen Ihre Wünsche</p>
+                    <p><strong>3.</strong> In 48h ist Ihre Website fertig</p>
+                    <p><strong>4.</strong> Sie sind online!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 WebXpress. Alle Rechte vorbehalten.</p>
+            <p>Schnelle, professionelle Websites für Friseure und Eisdielen.</p>
+        </div>
+    </footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9656cf3e8c247e1c","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.7.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDpwudI0qL1R8yb9oS4L%2BZmRojiVlO9n1tUnepEEcbH8eESnTR%2FgXvjst6Mg%2B6dkdGxm%2BM90D9k5hqzpRhmMvXZwblpnjpv%2BpTdsHLwsuwDpvKs%2FWZMz7G0gAbbqMnWX1PXqPzdMTuH%2BN5Y%2FpwD5r2Hu5Rr166pxO1EbPuyClwj%2BGZes%2F1tZrrZzyWVEGerDcuRPjFdfG0iPyNPj0V98W001JRbVrkPlZuvPWljxmrZCgUGQ8WluY3FS5jW96G1rQdA%2FPAiLsh9yXqueiuTNaqcbgHLZBsQE%2Bx0J0LJAWE4JNSvVqsdm9ixnyqJJmIRavhwBsD5ru6c%2FOor0MDe8QWW7hPHhcdytEYev2mgXpekdehEC7WInJUWR0cQ%2BYYXkmUE8lMeXJKDHJSNSpkkpmWECEhOOhP%2FktrYlWbN8jPwAX7i%2BTS6h1vTRzBf8bPiwuHB5sCyDwu%2F%2F9xPRvzqd8ywMTzLapm0C17WEhpRQp6Yfd2rZVdyB7CNJCBpz2vJMqqdveNJ%2F6lynszkfH5%2BWK7%2BU%3D";
+        window.__genspark_locale = "de-DE";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDpwudI0qL1R8yb9oS4L+ZmRojiVlO9n1tUnepEEcbH8eESnTR/gXvjst6Mg+6dkdGxm+M90D9k5hqzpRhmMvXZwblpnjpv+pTdsHLwsuwDpvKs/WZMz7G0gAbbqMnWX1PXqPzdMTuH+N5Y/pwD5r2Hu5Rr166pxO1EbPuyClwj+GZes/1tZrrZzyWVEGerDcuRPjFdfG0iPyNPj0V98W001JRbVrkPlZuvPWljxmrZCgUGQ8WluY3FS5jW96G1rQdA/PAiLsh9yXqueiuTNaqcbgHLZBsQE+x0J0LJAWE4JNSvVqsdm9ixnyqJJmIRavhwBsD5ru6c/Oor0MDe8QWW7hPHhcdytEYev2mgXpekdehEC7WInJUWR0cQ+YYXkmUE8lMeXJKDHJSNSpkkpmWECEhOOhP/ktrYlWbN8jPwAX7i+TS6h1vTRzBf8bPiwuHB5sCyDwu//9xPRvzqd8ywMTzLapm0C17WEhpRQp6Yfd2rZVdyB7CNJCBpz2vJMqqdveNJ/6lynszkfH5+WK7+U=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
