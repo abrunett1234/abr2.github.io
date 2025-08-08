@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebXpress - Professionelle Websites in 48 Stunden</title>
+    <title>WebXpress - Perfekte Websites für das Handwerk</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
         
         body {
-            font-family: Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #fff;
         }
         
         .container {
@@ -27,14 +27,14 @@
         /* Header */
         .header {
             background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px 0;
             position: sticky;
             top: 0;
-            z-index: 1000;
-            padding: 15px 0;
+            z-index: 100;
         }
         
-        .header-content {
+        .header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -44,190 +44,160 @@
             font-size: 28px;
             font-weight: bold;
             color: #2c3e50;
-        }
-        
-        .nav {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-        
-        .nav a {
             text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
         }
         
-        .nav a:hover {
+        .contact-info {
+            text-align: right;
+            font-size: 14px;
+        }
+        
+        .contact-info .email {
+            font-weight: bold;
             color: #3498db;
+            font-size: 16px;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #3498db, #2c3e50);
             color: white;
-            padding: 100px 0;
+            padding: 80px 0;
             text-align: center;
         }
         
         .hero h1 {
             font-size: 48px;
             margin-bottom: 20px;
-            font-weight: 700;
         }
         
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        .hero .subtitle {
+            font-size: 24px;
+            margin-bottom: 40px;
+            font-weight: 300;
         }
         
-        .cta-button {
-            background-color: #27ae60;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
+        .hero .description {
             font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.3s;
+            max-width: 800px;
+            margin: 0 auto 40px;
         }
         
-        .cta-button:hover {
-            background-color: #2ecc71;
-        }
-        
-        /* Features Section */
-        .features {
+        /* Services Section */
+        .services {
             padding: 80px 0;
             background-color: #f8f9fa;
         }
         
-        .features h2 {
+        .section-title {
             text-align: center;
             font-size: 36px;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             color: #2c3e50;
         }
         
-        .features-grid {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
         }
         
-        .feature-item {
+        .service-item {
             background: white;
-            padding: 30px;
+            padding: 40px 20px;
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
         
-        .feature-item:hover {
+        .service-item:hover {
             transform: translateY(-5px);
         }
         
-        .feature-icon {
+        .service-item i {
             font-size: 48px;
             color: #3498db;
             margin-bottom: 20px;
         }
         
-        .feature-item h3 {
+        .service-item h3 {
             font-size: 24px;
             margin-bottom: 15px;
             color: #2c3e50;
         }
         
-        .feature-item p {
-            color: #666;
+        .service-item p {
+            font-size: 16px;
             line-height: 1.6;
         }
         
         /* Examples Section */
         .examples {
             padding: 80px 0;
-            background-color: white;
-        }
-        
-        .examples h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #2c3e50;
-        }
-        
-        .examples-subtitle {
-            text-align: center;
-            font-size: 18px;
-            margin-bottom: 50px;
-            color: #666;
         }
         
         .examples-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 40px;
         }
         
         .example-item {
             background: white;
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
         
         .example-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
         }
         
         .example-image {
-            width: 100%;
-            height: 250px;
+            height: 200px;
             background-size: cover;
             background-position: center;
+            position: relative;
+        }
+        
+        .example-image.friseur {
+            background-image: url('https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/681102b9-b1d4-4525-8840-77fba642ba4f_wm');
+        }
+        
+        .example-image.eisdiele {
+            background-image: url('https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/3d71344d-9687-4acb-8269-cfa8878a4b24');
         }
         
         .example-content {
-            padding: 25px;
+            padding: 30px;
         }
         
         .example-content h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
+            font-size: 24px;
+            margin-bottom: 15px;
             color: #2c3e50;
         }
         
         .example-content p {
-            color: #666;
             margin-bottom: 20px;
-            line-height: 1.6;
+            color: #666;
         }
         
-        .example-button {
+        .btn {
+            display: inline-block;
             background-color: #3498db;
             color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 5px;
-            font-weight: 600;
-            cursor: pointer;
+            padding: 12px 30px;
             text-decoration: none;
-            display: inline-block;
+            border-radius: 25px;
+            font-weight: 600;
             transition: background-color 0.3s;
         }
         
-        .example-button:hover {
+        .btn:hover {
             background-color: #2980b9;
         }
         
@@ -237,24 +207,10 @@
             background-color: #f8f9fa;
         }
         
-        .pricing h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #2c3e50;
-        }
-        
-        .pricing-subtitle {
-            text-align: center;
-            font-size: 18px;
-            margin-bottom: 50px;
-            color: #666;
-        }
-        
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 40px;
             max-width: 800px;
             margin: 0 auto;
         }
@@ -262,19 +218,14 @@
         .pricing-card {
             background: white;
             padding: 40px 30px;
-            border-radius: 10px;
+            border-radius: 15px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border: 3px solid #27ae60;
-            transition: transform 0.3s;
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-5px);
+            border: 3px solid #3498db;
         }
         
         .pricing-card h3 {
-            font-size: 24px;
+            font-size: 28px;
             margin-bottom: 20px;
             color: #2c3e50;
         }
@@ -282,7 +233,7 @@
         .price {
             font-size: 48px;
             font-weight: bold;
-            color: #27ae60;
+            color: #3498db;
             margin-bottom: 10px;
         }
         
@@ -291,81 +242,82 @@
             margin-bottom: 30px;
         }
         
-        .pricing-features {
+        .features {
             list-style: none;
             margin-bottom: 30px;
         }
         
-        .pricing-features li {
+        .features li {
             padding: 8px 0;
-            color: #666;
             border-bottom: 1px solid #eee;
         }
         
-        .pricing-features li:last-child {
+        .features li:last-child {
             border-bottom: none;
         }
         
-        .pricing-button {
-            background-color: #27ae60;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.3s;
-            width: 100%;
-        }
-        
-        .pricing-button:hover {
-            background-color: #2ecc71;
+        .features i {
+            color: #27ae60;
+            margin-right: 10px;
         }
         
         /* Contact Section */
         .contact {
             padding: 80px 0;
-            background-color: #2c3e50;
-            color: white;
-        }
-        
-        .contact h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 50px;
         }
         
         .contact-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        
+        .contact-info-large {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info-large .email {
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .contact-info-large .phone {
+            color: #2c3e50;
+        }
+        
+        /* Impressum Section */
+        .impressum {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .impressum h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .impressum-content {
             max-width: 800px;
             margin: 0 auto;
         }
         
-        .contact-info {
-            text-align: center;
-        }
-        
-        .contact-info h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #3498db;
-        }
-        
-        .contact-info p {
-            margin-bottom: 10px;
-            font-size: 16px;
+        .impressum p {
+            margin-bottom: 15px;
         }
         
         /* Footer */
         .footer {
-            background-color: #1a1a1a;
+            background-color: #2c3e50;
             color: white;
-            padding: 30px 0;
+            padding: 40px 0;
             text-align: center;
         }
         
@@ -373,33 +325,28 @@
             margin-bottom: 10px;
         }
         
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 32px;
+                font-size: 36px;
             }
             
-            .hero p {
-                font-size: 18px;
+            .hero .subtitle {
+                font-size: 20px;
             }
             
-            .features-grid,
+            .header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .services-grid,
             .examples-grid {
                 grid-template-columns: 1fr;
             }
             
             .pricing-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .nav {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
             }
         }
     </style>
@@ -408,87 +355,83 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="header-content">
-                <div class="logo">WebXpress</div>
-                <nav class="nav">
-                    <a href="#home">Home</a>
-                    <a href="#leistungen">Leistungen</a>
-                    <a href="#beispiele">Beispiele</a>
-                    <a href="#preise">Preise</a>
-                    <a href="#kontakt">Kontakt</a>
-                </nav>
+            <a href="#" class="logo">WebXpress</a>
+            <div class="contact-info">
+                <div class="email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="adccc1ccc383cfdfd8c3c8d9d9cceddddfc2d9c2c383c0c8">[email&#160;protected]</a></div>
+                <div>Tel: 09429 947796</div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="container">
-            <h1>Professionelle Websites in 48 Stunden</h1>
-            <p>Perfekte Websites für Friseure und Eisdielen - schnell, professionell und zum Festpreis.</p>
-            <a href="#kontakt" class="cta-button">Jetzt Website anfragen</a>
+            <h1>Professionelle Websites für das Handwerk</h1>
+            <div class="subtitle">599€ - Fertig. Punkt.</div>
+            <div class="description">
+                Wir erstellen professionelle Websites für Handwerksbetriebe - einfach, schnell und ohne versteckte Kosten. In nur 48 Stunden haben Sie Ihre fertige Website.
+            </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="leistungen">
+    <!-- Services Section -->
+    <section class="services">
         <div class="container">
-            <h2>Was Sie bekommen</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">🌐</div>
+            <h2 class="section-title">Was Sie bekommen</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <i class="fas fa-laptop-code"></i>
                     <h3>Vollständige Website</h3>
-                    <p>5 Seiten mit allem was Sie brauchen: Home, Über uns, Services, Preise und Kontakt</p>
+                    <p>5 Seiten mit allem was Sie brauchen: Home, Über uns, Services, Galerie und Kontakt</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">📱</div>
+                <div class="service-item">
+                    <i class="fas fa-mobile-alt"></i>
                     <h3>Mobile-optimiert</h3>
                     <p>Ihre Website funktioniert perfekt auf jedem Handy, Tablet und Computer</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🖼️</div>
+                <div class="service-item">
+                    <i class="fas fa-images"></i>
                     <h3>Bildergalerie</h3>
-                    <p>Professionelle Präsentation Ihrer Arbeiten und Produkte</p>
+                    <p>Zeigen Sie Ihre besten Arbeiten in einer ansprechenden Galerie</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🗺️</div>
+                <div class="service-item">
+                    <i class="fas fa-map-marker-alt"></i>
                     <h3>Google-Integration</h3>
-                    <p>Ihre Kunden finden Sie sofort über Google Maps</p>
+                    <p>Ihre Kunden finden Sie sofort über Google Maps und lokale Suche</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">✉️</div>
+                <div class="service-item">
+                    <i class="fas fa-envelope"></i>
                     <h3>Kontaktformular</h3>
-                    <p>Einfache Kontaktaufnahme für Ihre Kunden</p>
+                    <p>Kunden können Sie direkt über die Website erreichen</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Fertig in 48 Stunden</h3>
-                    <p>Schnelle Umsetzung ohne lange Wartezeiten</p>
+                <div class="service-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Fertig in 48h</h3>
+                    <p>Keine wochenlange Wartezeit - Ihre Website ist in 2 Tagen online</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Examples Section -->
-    <section class="examples" id="beispiele">
+    <section class="examples">
         <div class="container">
-            <h2>Beispiel-Websites</h2>
-            <p class="examples-subtitle">Sehen Sie, wie Ihre Website aussehen könnte</p>
+            <h2 class="section-title">Unsere Beispiel-Websites</h2>
             <div class="examples-grid">
                 <div class="example-item">
-                    <div class="example-image" style="background-image: url('https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/681102b9-b1d4-4525-8840-77fba642ba4f_wm');"></div>
+                    <div class="example-image friseur"></div>
                     <div class="example-content">
                         <h3>Friseursalon</h3>
-                        <p>Elegante Website für Friseurbetriebe mit Galerie, Services und Terminbuchung</p>
-                        <a href="https://abrunett1234.github.io/abr.github.io/" target="_blank" class="example-button">Beispiel ansehen</a>
+                        <p>Sehen Sie, wie eine professionelle Website für einen Friseursalon aussehen kann.</p>
+                        <a href="https://abrunett1234.github.io/abr.github.io/" target="_blank" class="btn">Beispiel ansehen</a>
                     </div>
                 </div>
                 <div class="example-item">
-                    <div class="example-image" style="background-image: url('https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/d72139b8-bbf2-4e54-b1f0-2eb34c42f6ef_wm');"></div>
+                    <div class="example-image eisdiele"></div>
                     <div class="example-content">
                         <h3>Eisdiele</h3>
-                        <p>Appetitliche Website für Eisdielen mit Sorten-Übersicht und Öffnungszeiten</p>
-                        <a href="https://abrunett1234.github.io/alanbrunetta.github.io/" target="_blank" class="example-button">Beispiel ansehen</a>
+                        <p>Eine ansprechende Website für eine Eisdiele mit appetitlichen Bildern.</p>
+                        <a href="https://abrunett1234.github.io/alanbrunetta.github.io/" target="_blank" class="btn">Beispiel ansehen</a>
                     </div>
                 </div>
             </div>
@@ -496,67 +439,86 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="pricing" id="preise">
+    <section class="pricing">
         <div class="container">
-            <h2>Unsere Preise</h2>
-            <p class="pricing-subtitle">Zwei Zahlungsweisen - eine Leistung</p>
+            <h2 class="section-title">Zwei Zahlungsweisen - eine Leistung</h2>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3>Einmalzahlung</h3>
                     <div class="price">599€</div>
                     <div class="price-period">einmalig</div>
-                    <ul class="pricing-features">
-                        <li>Vollständige Website (5 Seiten)</li>
-                        <li>Bildergalerie für Ihre Arbeiten</li>
-                        <li>Mobile-optimiert</li>
-                        <li>Google-Integration</li>
-                        <li>Kontaktformular</li>
-                        <li>12 Monate Hosting inklusive</li>
-                        <li>6 Monate kostenlose Änderungen</li>
-                        <li>Fertig in 48 Stunden</li>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Vollständige Website (5 Seiten)</li>
+                        <li><i class="fas fa-check"></i> Mobile-optimiert</li>
+                        <li><i class="fas fa-check"></i> Google-Maps Integration</li>
+                        <li><i class="fas fa-check"></i> Kontaktformular</li>
+                        <li><i class="fas fa-check"></i> Bildergalerie</li>
+                        <li><i class="fas fa-check"></i> 12 Monate kostenlose Änderungen</li>
+                        <li><i class="fas fa-check"></i> Fertig in 48 Stunden</li>
                     </ul>
-                    <a href="#kontakt" class="pricing-button">Jetzt bestellen</a>
                 </div>
                 <div class="pricing-card">
                     <h3>Ratenzahlung</h3>
                     <div class="price">49,90€</div>
                     <div class="price-period">monatlich für 12 Monate</div>
-                    <ul class="pricing-features">
-                        <li>Vollständige Website (5 Seiten)</li>
-                        <li>Bildergalerie für Ihre Arbeiten</li>
-                        <li>Mobile-optimiert</li>
-                        <li>Google-Integration</li>
-                        <li>Kontaktformular</li>
-                        <li>12 Monate Hosting inklusive</li>
-                        <li>6 Monate kostenlose Änderungen</li>
-                        <li>Fertig in 48 Stunden</li>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Vollständige Website (5 Seiten)</li>
+                        <li><i class="fas fa-check"></i> Mobile-optimiert</li>
+                        <li><i class="fas fa-check"></i> Google-Maps Integration</li>
+                        <li><i class="fas fa-check"></i> Kontaktformular</li>
+                        <li><i class="fas fa-check"></i> Bildergalerie</li>
+                        <li><i class="fas fa-check"></i> 12 Monate kostenlose Änderungen</li>
+                        <li><i class="fas fa-check"></i> Fertig in 48 Stunden</li>
                     </ul>
-                    <a href="#kontakt" class="pricing-button">Jetzt bestellen</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="kontakt">
+    <section class="contact">
         <div class="container">
-            <h2>Kontakt</h2>
             <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Bereit für Ihre neue Website?</h3>
-                    <p><strong>Alan Brunetta</strong></p>
-                    <p>Römerstr. 5</p>
-                    <p>94345 Obermotzing</p>
-                    <p>Telefon: 09429 947796</p>
-                    <p>E-Mail: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="36575a575818544443585342425776464459425958185b53">[email&#160;protected]</a></p>
+                <h2>Kontaktieren Sie mich</h2>
+                <div class="contact-info-large">
+                    <div class="email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e6878a8788c88494938883929287a6969489928988c88b83">[email&#160;protected]</a></div>
+                    <div class="phone">09429 947796</div>
                 </div>
-                <div class="contact-info">
-                    <h3>So funktioniert es</h3>
-                    <p><strong>1.</strong> Sie kontaktieren uns</p>
-                    <p><strong>2.</strong> Wir besprechen Ihre Wünsche</p>
-                    <p><strong>3.</strong> In 48h ist Ihre Website fertig</p>
-                    <p><strong>4.</strong> Sie sind online!</p>
-                </div>
+                <p>Rufen Sie mich an oder schreiben Sie mir eine E-Mail. Ich berate Sie gerne kostenlos und unverbindlich.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impressum Section -->
+    <section class="impressum">
+        <div class="container">
+            <div class="impressum-content">
+                <h3>Impressum</h3>
+                <p><strong>Angaben gemäß § 5 TMG:</strong></p>
+                <p>
+                    Alan Brunetta<br>
+                    Römerstr. 5<br>
+                    94345 Obermotzing
+                </p>
+                
+                <p><strong>Kontakt:</strong></p>
+                <p>
+                    Telefon: 09429 947796<br>
+                    E-Mail: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bfded3ded191ddcdcad1dacbcbdeffcfcdd0cbd0d191d2da">[email&#160;protected]</a>
+                </p>
+                
+                <p><strong>Haftung für Inhalte:</strong></p>
+                <p>
+                    Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den
+                    allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht
+                    verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen
+                    zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+                </p>
+                
+                <p><strong>Bildnachweise:</strong></p>
+                <p>
+                    Die auf dieser Website verwendeten Bilder sind urheberrechtlich geschützt und wurden rechtmäßig erworben oder erstellt.
+                </p>
             </div>
         </div>
     </section>
@@ -564,18 +526,19 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 WebXpress. Alle Rechte vorbehalten.</p>
-            <p>Schnelle, professionelle Websites für Friseure und Eisdielen.</p>
+            <p><strong>WebXpress</strong></p>
+            <p>Perfekte Websites für das Handwerk</p>
+            <p>&copy; 2025 Alan Brunetta. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9656cf3e8c247e1c","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.7.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"96bfba51488d1e26","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.7.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
 </body>
 </html>
     <script id="html_badge_script1">
         window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
-            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDpwudI0qL1R8yb9oS4L%2BZmRojiVlO9n1tUnepEEcbH8eESnTR%2FgXvjst6Mg%2B6dkdGxm%2BM90D9k5hqzpRhmMvXZwblpnjpv%2BpTdsHLwsuwDpvKs%2FWZMz7G0gAbbqMnWX1PXqPzdMTuH%2BN5Y%2FpwD5r2Hu5Rr166pxO1EbPuyClwj%2BGZes%2F1tZrrZzyWVEGerDcuRPjFdfG0iPyNPj0V98W001JRbVrkPlZuvPWljxmrZCgUGQ8WluY3FS5jW96G1rQdA%2FPAiLsh9yXqueiuTNaqcbgHLZBsQE%2Bx0J0LJAWE4JNSvVqsdm9ixnyqJJmIRavhwBsD5ru6c%2FOor0MDe8QWW7hPHhcdytEYev2mgXpekdehEC7WInJUWR0cQ%2BYYXkmUE8lMeXJKDHJSNSpkkpmWECEhOOhP%2FktrYlWbN8jPwAX7i%2BTS6h1vTRzBf8bPiwuHB5sCyDwu%2F%2F9xPRvzqd8ywMTzLapm0C17WEhpRQp6Yfd2rZVdyB7CNJCBpz2vJMqqdveNJ%2F6lynszkfH5%2BWK7%2BU%3D";
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDuvsdDXMu7QYFLvBeTmg3Hacq097agze7fpu08qqmtqx91YtQGKExYdobnoHFrnFVt9Eh38e6cFSFFP%2FzgRr1nYhB%2F18RuVEpHdOR%2B8qCkl2qCugH9%2BnT3lO6Zd4KeAYhuiIh5Wm3eK0lqq8IdnLiKHDrQsYk5CnKw4r18PNKz7%2Fl%2BipHXXh6BBX59peNwF29XQNKuE%2FjzgoWa1tAIZV5MpuXGgU7FpfC6FvI%2BPDCd2p4C7jGjzuuV9yv%2BkRXDxp6RWI1FoAdoyIp4sYSu5tXi1CHrHILOoaYJHHe3P7IMOIZTWSUj2I8oBcvqPWtpc%2FBN%2FmxKAYZy0uqNnOKUtMuidNT%2B4EEe5E8lht8XLO8EDMtTiwPSFTyht2lxLw0oirYxKBedKIyEqMFWz84i3M5ClwLA04d6ZEqZPw%2Bg2iTFHd6BIGlRuEUsIOyhLPgJzASqRr4l92UKRH%2BflEcggMBkwisMU3mH%2Fvf2berg5a2Gd6KVPlu%2BGdvH26Tylsab3SCQ%3D%3D";
         window.__genspark_locale = "de-DE";
-        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDpwudI0qL1R8yb9oS4L+ZmRojiVlO9n1tUnepEEcbH8eESnTR/gXvjst6Mg+6dkdGxm+M90D9k5hqzpRhmMvXZwblpnjpv+pTdsHLwsuwDpvKs/WZMz7G0gAbbqMnWX1PXqPzdMTuH+N5Y/pwD5r2Hu5Rr166pxO1EbPuyClwj+GZes/1tZrrZzyWVEGerDcuRPjFdfG0iPyNPj0V98W001JRbVrkPlZuvPWljxmrZCgUGQ8WluY3FS5jW96G1rQdA/PAiLsh9yXqueiuTNaqcbgHLZBsQE+x0J0LJAWE4JNSvVqsdm9ixnyqJJmIRavhwBsD5ru6c/Oor0MDe8QWW7hPHhcdytEYev2mgXpekdehEC7WInJUWR0cQ+YYXkmUE8lMeXJKDHJSNSpkkpmWECEhOOhP/ktrYlWbN8jPwAX7i+TS6h1vTRzBf8bPiwuHB5sCyDwu//9xPRvzqd8ywMTzLapm0C17WEhpRQp6Yfd2rZVdyB7CNJCBpz2vJMqqdveNJ/6lynszkfH5+WK7+U=";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDuvsdDXMu7QYFLvBeTmg3Hacq097agze7fpu08qqmtqx91YtQGKExYdobnoHFrnFVt9Eh38e6cFSFFP/zgRr1nYhB/18RuVEpHdOR+8qCkl2qCugH9+nT3lO6Zd4KeAYhuiIh5Wm3eK0lqq8IdnLiKHDrQsYk5CnKw4r18PNKz7/l+ipHXXh6BBX59peNwF29XQNKuE/jzgoWa1tAIZV5MpuXGgU7FpfC6FvI+PDCd2p4C7jGjzuuV9yv+kRXDxp6RWI1FoAdoyIp4sYSu5tXi1CHrHILOoaYJHHe3P7IMOIZTWSUj2I8oBcvqPWtpc/BN/mxKAYZy0uqNnOKUtMuidNT+4EEe5E8lht8XLO8EDMtTiwPSFTyht2lxLw0oirYxKBedKIyEqMFWz84i3M5ClwLA04d6ZEqZPw+g2iTFHd6BIGlRuEUsIOyhLPgJzASqRr4l92UKRH+flEcggMBkwisMU3mH/vf2berg5a2Gd6KVPlu+GdvH26Tylsab3SCQ==";
     </script>
     
     <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
